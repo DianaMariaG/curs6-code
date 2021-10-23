@@ -10,13 +10,7 @@ public class FindNumbersBiggerThanX {
     }
 
     private static int[] findNumbersBiggerThanParameter(int[] numbers, int x) {
-        int count = 0;
-        for (int number : numbers) {
-            if (number > x) {
-                count++;
-            }
-        }
-        int[] result = new int[count];
+        int[] result = new int[numbers.length];
         int j = 0;
         for (int number : numbers) {
             if (number > x) {
@@ -24,6 +18,6 @@ public class FindNumbersBiggerThanX {
                 j++;
             }
         }
-        return result;
+        return Arrays.copyOf(result, j);
     }
 }
